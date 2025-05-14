@@ -6,6 +6,7 @@ import { Assign } from "./assign";
 import { Contact } from "./contact";
 import { Faq } from "./faq";
 import { Replyfaq } from "./replyfaq";
+import './main.css'
 
 export const App = () => {
     return (

@@ -172,7 +172,9 @@ export const TaskPage = () => {
         <Navbar />
       </div>
       <div className="row" style={{ height: "100vh", marginTop: "6%" }}>
-        <div className="col-3 p-3 bg-secondary text-white">
+        <div className="col-12 col-md-3 p-3 bg-secondary text-white"
+             style={{ minHeight: "max-content" }}
+        >
           <h5>Assigned Tasks</h5>
           <ul className="list-group mt-3">
             {projects.map((project) => (
@@ -188,7 +190,7 @@ export const TaskPage = () => {
             ))}
           </ul>
         </div>
-        <div className="col-9 p-3">
+        <div className="col p-3">
           <div className="card shadow p-5">
             {currentProject ? (
               <>

@@ -170,7 +170,9 @@ export const Admin = () => {
       </div>
       <div className="row g-0" style={{marginTop:"5%"}}>
         {/* Left Navbar */}
-        <nav className="col-2 bg-dark text-white min-vh-100 py-3">
+        <nav className="col-md-2 col-12 bg-dark text-white py-3"
+          style={{ minHeight: "max-content" }}
+        >
 
           <ul className="nav mt-5">
             {navItems.map((item) => (

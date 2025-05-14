@@ -16,7 +16,8 @@ export const Assign = () => {
       desc: "A Neighborhood Network serves as a platform for residents to come together, share information, and access services that improve their well-being. These networks often focus on building a sense of community, encouraging participation, and addressing local needs through collaboration. They can be formal organizations or informal groups, and they may operate in various settings, including urban, suburban, and rural areas.",
       due: "2025-05-14",
       emailAddresses: ["Goku@gmail.com", "Zoro@gmail.com"],
-      features: "A Neighborhood Network features community engagement through events and volunteer opportunities, resource sharing that provides access to local services, and communication platforms like social media and newsletters to keep residents informed. It offers support services for vulnerable populations, health and wellness programs promoting healthy living, and safety initiatives in collaboration with local law enforcement. Additionally, it hosts cultural and educational activities to celebrate diversity, promotes sustainability efforts through environmentally friendly practices, and ultimately strengthens community bonds while enhancing the overall quality of life for residents.",
+      features:
+        "A Neighborhood Network features community engagement through events and volunteer opportunities, resource sharing that provides access to local services, and communication platforms like social media and newsletters to keep residents informed. It offers support services for vulnerable populations, health and wellness programs promoting healthy living, and safety initiatives in collaboration with local law enforcement. Additionally, it hosts cultural and educational activities to celebrate diversity, promotes sustainability efforts through environmentally friendly practices, and ultimately strengthens community bonds while enhancing the overall quality of life for residents.",
     },
     {
       id: 2,
@@ -24,7 +25,8 @@ export const Assign = () => {
       desc: "The Local Link Project is an initiative designed to strengthen community connections by linking residents with local resources, services, and opportunities. It aims to enhance social cohesion, promote economic development, and improve the overall quality of life within neighborhoods. The project often focuses on building relationships among residents, local businesses, and organizations to create a supportive and vibrant community ecosystem.",
       due: "2025-05-24",
       emailAddresses: ["Luffy@gmail.com"],
-      features: "The Local Link Project features a comprehensive resource directory that connects residents with local services and businesses, organizes community events like farmers' markets and workshops to encourage participation, and facilitates networking opportunities among residents and local organizations. It promotes volunteer programs to foster community engagement, offers skill-building workshops for personal and professional development, and provides support for local businesses through marketing assistance and funding resources. Additionally, the project engages in community advocacy to address local issues, promotes sustainability initiatives such as recycling and community gardens, implements feedback mechanisms for residents to voice their needs, and collaborates with local organizations to enhance service delivery and resource availability.",
+      features:
+        "The Local Link Project features a comprehensive resource directory that connects residents with local services and businesses, organizes community events like farmers' markets and workshops to encourage participation, and facilitates networking opportunities among residents and local organizations. It promotes volunteer programs to foster community engagement, offers skill-building workshops for personal and professional development, and provides support for local businesses through marketing assistance and funding resources. Additionally, the project engages in community advocacy to address local issues, promotes sustainability initiatives such as recycling and community gardens, implements feedback mechanisms for residents to voice their needs, and collaborates with local organizations to enhance service delivery and resource availability.",
     },
   ]);
 
@@ -104,11 +106,14 @@ export const Assign = () => {
       </div>
       <div className="row" style={{ height: "100vh", marginTop: "6%" }}>
         {/* Left Sidebar */}
-        <div className="bg-secondary col-3 p-3">
-          <div className="d-flex justify-content-center mt-5">
+        <div
+          className="bg-secondary col-12 col-md-3 p-3"
+          style={{ minHeight: "max-content" }}
+        >
+          <div className="d-flex justify-content-center mt-4 mt-md-5">
             <button
-              className="btn btn-outline-light btn-lg"
-              style={{ paddingLeft: "20%", paddingRight: "20%" }}
+              className="btn btn-outline-light btn-lg w-100"
+              style={{ maxWidth: 250 }}
               onClick={handleAddTaskClick}
             >
               +
@@ -129,13 +134,12 @@ export const Assign = () => {
               </div>
             ))}
           </ul>
-          <div className="d-flex justify-content-center mt-5">
-            <Link to={"/admin"}>
-              <button className="btn btn-danger">Dashboard</button>
+          <div className="d-flex justify-content-center mt-4 mt-md-5">
+            <Link to={"/admin"} className="w-100" style={{ maxWidth: 250 }}>
+              <button className="btn btn-danger w-100">Dashboard</button>
             </Link>
           </div>
         </div>
-
         {/* Main Content */}
         <div className="p-4 bg-light col">
           {/* empty form */}

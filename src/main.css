@@ -5,3 +5,8 @@ body{
 html, body {
     overflow-x: hidden;
 }
+@media (max-width: 600px) {
+    .changeMarginTop {
+        margin-top: 15%;
+    }
+}
