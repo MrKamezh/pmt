@@ -15,7 +15,7 @@ const Chatpage = ({ messages, onSend }) => {
   };
 
   return (
-    <div className="container-fluid vh-100 bg-light d-flex p-0">
+    <div className="container-fluid vh-50 bg-light d-flex p-0">
       <div className="flex-grow-1 d-flex flex-column bg-white border-start">
         <div className="flex-grow-1 overflow-auto p-3 bg-light">
           {messages.map((msg, idx) => (
@@ -89,18 +89,12 @@ export const TaskPage = () => {
     },
     {
       id: 2,
-      name: "Project Y",
+      name: "Local Link",
       email: ["1@gmail.com", "2@gmail.com", "3@gmail.com"],
-      details: "Details about Project Y",
+      details: "The Local Link Project is an initiative designed to strengthen community connections by linking residents with local resources, services, and opportunities. It aims to enhance social cohesion, promote economic development, and improve the overall quality of life within neighborhoods. The project often focuses on building relationships among residents, local businesses, and organizations to create a supportive and vibrant community ecosystem.",
       receivedFile: [],
     },
-     {
-      id: 3,
-      name: "Project Y",
-      email: ["1@gmail.com", "2@gmail.com", "3@gmail.com"],
-      details: "Details about Project Y",
-      receivedFile: [],
-    },
+     
   ]);
   const [selectedProject, setSelectedProject] = useState(null);
   const [openChat, setOpenChat] = useState(false);
@@ -110,7 +104,6 @@ export const TaskPage = () => {
     1: [
       { from: "user1", text: "Hi there!" },
       { from: "user2", text: "Hello Alice!" },
-      { from: "You", text: "Hello everyone!" },
     ],
     2: [{ from: "user1", text: "Welcome to Project Y chat!" }],
   });

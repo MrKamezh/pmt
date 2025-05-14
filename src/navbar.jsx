@@ -63,7 +63,7 @@ export const Navbar = () => {
             )}
           <div>
             {user ? (
-              <div className="ms-4 border border-5 rounded-circle  ">
+              <div className="ms-4">
                 <UserButton />
               </div>
             ) : (
