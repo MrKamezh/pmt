@@ -99,6 +99,12 @@ export const Assign = () => {
     setSelectedProject(updatedProject);
   };
 
+  const [individualDashboard, setIndividualDashboard] = useState(false)
+
+  function iDashboard(e){
+    setIndividualDashboard(true)
+  }
+
   return (
     <>
       <div className="fixed-top">
@@ -296,30 +302,83 @@ export const Assign = () => {
             </div>
           )}
 
-          {/* Project Details */}
-          {showProjectDetails && selectedProject && (
-            <div className="p-5 card shadow">
-              <h3>{selectedProject.name}</h3>
-              <h5 className="mt-3">Description</h5>
-              <p className="mt-3">{selectedProject.desc}</p>
-              <h5 className="mt-3">Features</h5>
-              <p className="mt-3">{selectedProject.features}</p>
-              <p className="mt-3">
-                <b>Due:</b> {selectedProject.due}
-              </p>
-              <h5 className="mt-3">Email Addresses</h5>
-              <ul>
-                {selectedProject.emailAddresses.map((email, idx) => (
-                  <li key={idx}>{email}</li>
-                ))}
-              </ul>
-              <button
-                className="btn btn-danger mt-3"
-                onClick={() => handleEditProject(selectedProject)}
-              >
-                Edit
-              </button>
-            </div>
+          {/* Project Details or Dashboard */}
+          {showProjectDetails && selectedProject ? (
+            individualDashboard ? (
+              <div className="p-5 card shadow">
+                <div className="d-flex justify-content-between align-items-center mb-4">
+                  <h3 className="mb-0">{selectedProject.name} Dashboard</h3>
+                  <button
+                    className="btn btn-outline-secondary"
+                    onClick={() => setIndividualDashboard(false)}
+                  >
+                    Back
+                  </button>
+                </div>
+                <div className="row mb-4">
+                  <div className="col-md-6 mb-3">
+                    <div className="card border-0 bg-light shadow-sm h-100">
+                      <div className="card-body">
+                        <h6 className="card-title text-muted">Due Date</h6>
+                        <p className="card-text fs-5">{selectedProject.due}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6 mb-3">
+                    <div className="card border-0 bg-light shadow-sm h-100">
+                      <div className="card-body">
+                        <h6 className="card-title text-muted">Assigned To</h6>
+                        <ul className="mb-0">
+                          {selectedProject.emailAddresses.map((email, idx) => (
+                            <li key={idx} className="fs-6">{email}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mb-4">
+                  <div className="card border-0 bg-light shadow-sm">
+                    <div className="card-body">
+                      <h6 className="card-title text-muted">Description</h6>
+                      <p className="card-text">{selectedProject.desc}</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="card border-0 bg-light shadow-sm">
+                    <div className="card-body">
+                      <h6 className="card-title text-muted">Features</h6>
+                      <p className="card-text">{selectedProject.features}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="p-5 card shadow">
+                <div className="d-flex justify-content-between">
+                  <h3>{selectedProject.name}</h3>
+                  <button
+                    className="btn btn-danger fw-bold"
+                    onClick={iDashboard}
+                  >
+                    Dashboard
+                  </button>
+                </div>
+                <h5 className="mt-3">Description</h5>
+                <p className="mt-3">{selectedProject.desc}</p>
+                <h5 className="mt-3">Features</h5>
+                <p className="mt-3">{selectedProject.features}</p>
+                <button
+                  className="btn btn-danger mt-3"
+                  onClick={() => handleEditProject(selectedProject)}
+                >
+                  Edit
+                </button>
+              </div>
+            )
+          ) : (
+            <></>
           )}
         </div>
       </div>

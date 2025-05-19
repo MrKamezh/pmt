@@ -6,6 +6,7 @@ import { Assign } from "./assign";
 import { Contact } from "./contact";
 import { Faq } from "./faq";
 import { Replyfaq } from "./replyfaq";
+import { Selection } from "./selection";
 import './main.css'
 
 export const App = () => {
@@ -19,6 +20,7 @@ export const App = () => {
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/faq' element={<Faq />} />
                 <Route path='/replyfaq' element={<Replyfaq />} />
+                <Route path='/selection' element={<Selection />} />
             </Routes>
         </BrowserRouter>
     );

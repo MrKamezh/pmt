@@ -44,9 +44,9 @@ export const Navbar = () => {
               <div>
                 <button
                   className="btn btn-danger ms-4 fw-bold"
-                  onClick={() => navigate("/assign")}
+                  onClick={() => navigate("/admin")}
                 >
-                  MySpace
+                  Monitor
                 </button>
               </div>
             )}
@@ -55,7 +55,7 @@ export const Navbar = () => {
               <div>
                 <button
                   className="btn btn-danger ms-4 fw-bold"
-                  onClick={() => navigate("/task")}
+                  onClick={() => navigate("/selection")}
                 >
                   MySpace
                 </button>
